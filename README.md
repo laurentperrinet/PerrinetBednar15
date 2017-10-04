@@ -1,4 +1,4 @@
-= Edge co-occurrences can account for rapid categorization of natural versus animal images =
+= Edge co-occurrences can account for rapid categorization of natural versus animal images
 
 Code to replicate paper “Edge co-occurrences can account for rapid categorization of natural versus animal images”
 
