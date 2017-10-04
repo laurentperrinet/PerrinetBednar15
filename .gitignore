@@ -140,6 +140,8 @@ _minted*
 *.pyg
 
 # morewrites
+
+
 *.mw
 
 # nomencl
@@ -218,3 +220,100 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+
+
+
+
+
+ ms/PerrinetBednar15supplementary.synctex.gz(busy)
+notebooks/results
+test
+.AppleDouble/
+ms/PerrinetBednar15supplementary.synctex.gz(busy)
+.ipynb_checkpoints/
+database/.AppleDouble/
+database/Yelmo/
+index.html
+mat/
+web.zip
+frioul*
+white*
+.DS_Store
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+
+# Translations
+*.mo
+
+# Mr Developer
+.mr.developer.cfg
+.project
+.pydevproject
+
+# Rope
+.ropeproject
+
+# Django stuff:
+*.log
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+ms/PerrinetBednar15srep.aux
+ms/PerrinetBednar15srep.bbl
+ms/PerrinetBednar15srep.blg
+ms/PerrinetBednar15srep.out
+ms/PerrinetBednar15srep.pdf
+ms/PerrinetBednar15srep.synctex.gz
+ms/PerrinetBednar15supplementary.aux
+ms/PerrinetBednar15supplementary.bbl
+ms/PerrinetBednar15supplementary.bcf
+ms/PerrinetBednar15supplementary.blg
+ms/PerrinetBednar15supplementary.out
+ms/PerrinetBednar15supplementary.pdf
+ms/PerrinetBednar15supplementary.run.xml
+ms/PerrinetBednar15supplementary.synctex.gz
+talk/perrinet15sis.aux
+talk/perrinet15sis.fdb_latexmk
+talk/perrinet15sis.fls
+talk/perrinet15sis.nav
+talk/perrinet15sis.out
+talk/perrinet15sis.pdf
+talk/perrinet15sis.snm
+talk/perrinet15sis.toc
+
+

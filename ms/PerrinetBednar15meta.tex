@@ -1,0 +1,68 @@
+%!TeX TS-program = Lualatex 
+%!TeX encoding = UTF-8 Unicode 
+%!TeX spellcheck = en-US
+%!TEX root = PerrinetBednar15srep.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\AuthorA}{Laurent U.~Perrinet}%
+\newcommand{\AuthorB}{James A.~Bednar} %
+\newcommand{\AddressA}{Institut de Neurosciences de la Timone \\
+CNRS / Aix-Marseille Universit\'e}% - Marseille, France
+\newcommand{\LongAddressA}{
+Institut de Neurosciences de la Timone (UMR 7289),
+Aix Marseille Universit\'e, CNRS \\
+%Facult\'e de M\'edecine - B\^atiment Neurosciences,
+27, Bd Jean Moulin,
+13385 Marseille Cedex 05,
+France}
+\newcommand{\PhoneA}{+33.491 324 044}%
+\newcommand{\AddressB}{Institute for Adaptive and Neural Computation\\
+University of Edinburgh}%
+\newcommand{\Website}{http://invibe.net/LaurentPerrinet}%
+\newcommand{\Email}{Laurent.Perrinet@univ-amu.fr}%
+\newcommand{\Title}{Edge co-occurrences can account for rapid categorization of natural versus animal images}% 88 chars <90
+\newcommand{\ShortTitle}{Edge co-occurrences categorize natural images}%
+\newcommand{\Abstract}{
+Making a judgment about the semantic category of a visual scene, such as whether it contains an animal, is typically assumed to involve high-level associative brain areas. Previous explanations require progressively analyzing the scene hierarchically at increasing levels of abstraction, from edge extraction to mid-level object recognition and then object categorization. Here we show that the statistics of edge co-occurrences alone are sufficient to perform a rough yet robust (translation, scale, and rotation invariant) scene categorization. We first extracted the edges from images using a scale-space analysis coupled with a sparse coding algorithm. We then computed the ``association field'' for different categories (natural, man-made, or containing an animal) by computing the statistics of edge co-occurrences. These differed strongly, with animal images having more curved configurations. We show that this geometry alone is sufficient for categorization, and that the pattern of errors made by humans is consistent with this procedure. Because these statistics could be measured as early as the primary visual cortex, the results challenge widely held assumptions about the flow of computations in the visual system. The results also suggest new algorithms for image classification and signal processing that exploit correlations between low-level structure and the underlying semantic category.
+}%
+\newcommand{\Keywords}{natural scene statistics; edge co-occurrence; good continuation; association field; lateral connections}%
+\newcommand{\Acknowledgments}{%
+We are very grateful for the reviewers' and editor effort and time to improve this paper. 
+L.U.P.\ was supported by EC IP project FP7-269921, ``BrainScaleS'' and 
+ANR project "BalaV1" N°ANR-13-BSV4-0014-02. 
+Thanks to David Fitzpatrick for allowing J.A.B.\ access to the laboratory 
+in which the man-made images were taken. 
+Correspondence and requests for materials 
+should be addressed to LUP (email:\Email\ )%
+\footnote{Code and supplementary material available 
+at \url{\Website/Publications/PerrinetBednar15}.}. %
+}%
+\newcommand{\SignificanceStatement}{%
+ Humans can very rapidly judge the category of an image, such as
+ whether it contains an animal. Previous theories for this capability
+ require hierarchical grouping of low-level edge elements into
+ increasingly complex object representations. Here we show that the
+ edges alone are sufficient for this judgment, if the patterns of
+ co-occurrence between them are taken into account. For instance,
+ images with animals tend to have contours that are more highly
+ curved. These results suggest that humans could be using low-level
+ statistical regularities to drive rapid but accurate high-level
+ judgments, and could help improve computer vision systems.
+ %% 100 words
+}
+\newcommand{\Highlights}{%
+\begin{itemize}
+\item Humans very efficiently judge the category of an image. 
+ 
+\item Previous theories require hierarchical grouping of object representations. 
+ 
+ \item We show that the edges alone are sufficient for this judgment.
+ 
+ \item The pattern of edge co-occurrence is sufficient to categorize an image with an animal. 
+ 
+ \item Humans could be using such low-level statistical regularities to drive decisions.
+
+ \item Future computer vision systems could use such features.
+
+\end{itemize}
+}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

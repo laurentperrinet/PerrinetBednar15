@@ -1,0 +1,748 @@
+%!TEX TS-program = LuaLaTeX
+%!TEX encoding = Latin1
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[10pt,ignorenonframetext]{beamer}%,draft
+%\documentclass[10pt,handout,ignorenonframetext]{beamer}%,draft
+%\documentclass{article}
+%\usepackage{beamerarticle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Preparing Effective Presentations
+%
+%Clear Purpose - An effective image should have a main point and not be just a collection of available data. If the central theme of the image isn't identified readily, improve the paper by revising or deleting the image. 
+%
+%Readily Understood - The main point should catch the attention of the audience immediately. When trying to figure out the image, audience members aren't fully paying attention to the speaker - try to minimize this.
+% 
+%Simple Format - With a simple, uncluttered format, the image is easy to design and directs audience attention to the main point. 
+%
+%Free of Nonessential Information - If information doesn't directly support the main point of the image, reserve this content for questions.
+%
+%Digestible - Excess information can confuse the audience. With an average of seven images in a 10-minute paper, roughly one minute is available per image. Restrict information to what is extemporaneously explainable to the uninitiated in the allowed length of time - reading prepared text quickly is a poor substitute for editing. 
+%
+%Unified - An image is most effective when information is organized around a single central theme and tells a unified story. 
+%
+%Graphic Format - In graphs, qualitative relationships are emphasized at the expense of precise numerical values, while in tables, the reverse is true. If a qualitative statement, such as "Flow rate increased markedly immediately after stimulation," is the main point of the image, the purpose is better served with a graphic format. A good place for detailed, tabular data is in an image or two held in reserve in case of questions. 
+%
+%Designed for the Current Oral Paper - Avoid complex data tables irrelevant to the current paper. The audience cares about evidence and conclusions directly related to the subject of the paper - not how much work was done. 
+%
+%Experimental - There is no time in a 10-minute paper to teach standard technology. Unless the paper directly examines this technology, only mention what is necessary to develop the theme. 
+%
+%Visual Contrast - Contrasts in brightness and tone between illustrations and backgrounds improves legibility. The best color combinations include white letters on medium blue, or black on yellow. Never use black letters on a dark background. Many people are red/green color blind - avoid using red and green next to each other.
+%
+%Integrated with Verbal Text - Images should support the verbal text and not merely display numbers. Conversely, verbal text should lay a proper foundation for each image. As each image is shown, give the audience a brief opportunity to become oriented before proceeding. If you will refer to the same image several times during your presentation, duplicate images. 
+%
+%Clear Train of Thought - Ideas developed in the paper and supported by the images should flow smoothly in a logical sequence, without wandering to irrelevant asides or bogging down in detail. Everything presented verbally or visually should have a clear role supporting the paper's central thesis. 
+%
+%Rights to Use Material - Before using any text, image, or other material, make sure that you have the rights to use it. Complex laws and social rules govern how much of someone's work you can reproduce in a presentation. Ignorance is no defense. Check that you are not infringing on copyright or other laws or on the customs of academic discourse when using material.
+%
+%
+%\def\Draft{draft}% draft or 'None'
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Author}{Laurent U.~Perrinet}%
+\newcommand{\Address}{InViBe, Institut de Neurociences de la Timone\\ CNRS / Universit{\'e} de la M{\'e}dit{\'e}rrann{\'e}e, Marseille, France.}%
+\newcommand{\AddressBis}{The Wellcome Trust Centre for Neuroimaging\\ University College London, UK.}%
+\newcommand{\Website}{http://invibe.net/LaurentPerrinet}%/Publications/Perrinet11sfn
+\newcommand{\AuthorEmail}{Laurent.Perrinet@incm.cnrs-mrs.fr}%
+\newcommand{\AuthorB}{David Fitzpatrick}%
+\newcommand{\AddressB}{Max Planck Florida Institute, Jupiter, Florida}%, USA.}%
+\newcommand{\AuthorC}{James A. Bednar}%
+\newcommand{\AddressC}{Institute for Adaptive and Neural Computation, University of Edinburgh}%, United Kingdom.}%
+\newcommand{\Title}{Edge statistics in natural versus laboratory images}%
+\newcommand{\SubTitle}{Implications for understanding lateral connectivity in primary visual cortex with respect to animal environments}%
+\newcommand{\Keywords}{natural images | lateral connectivity  | association field }%
+\newcommand{\Abstract}{%
+Oriented edges in images of natural scenes tend to be aligned in collinear or co-circular arrangements, with lines and smooth curves more common than other possible arrangements of edges (Geisler et al., Vis Res 41:711-24, 2001). The visual system appears to take advantage of this prior information, and human contour detection and grouping performance is well predicted by such an "association field" (Field et al., Vis Res 33:173-93, 1993). One possible candidate substrate for implementing an association field in mammals is the set of long-range lateral connections between neurons in the primary visual cortex (V1), which could act to facilitate detection of contours matching the association field, and/or inhibit detection of other contours (Choe and Miikkulainen, Biol Cyb 90:75-88, 2004). To fill this role, the lateral connections would need to be orientation specific and aligned along contours, and indeed such an arrangement has been found in tree shrew primary visual cortex (Bosking et al., J Neurosci 17:2112-27, 1997). However, it is not yet known whether these patterns develop as a result of visual experience, or are simply hard-wired to be appropriate for the statistics of natural scenes. To investigate this issue, we examined the properties of the visual environment of laboratory animals, to determine whether the observed connection patterns are more similar to the statistics of the rearing environment or of a natural habitat. Specifically, we analyzed the cooccurence statistics of edge elements in images of natural scenes, and compared them to corresponding statistics for images taken from within the rearing environment of the animals in the Bosking et al. (1997) study. We used a modified version of the algorithm from Geisler et al. (2001), with a more general edge extraction algorithm that uses sparse coding to avoid multiple responses to a single edge. Collinearity and co-circularity results for natural images replicated qualitatively the results from Geisler et al. (2001), confirming that prior information about continuations appeared consistently in natural images. However, we find that the largely man-made environment in which these animals were reared has a significantly higher probability of collinear edge elements. We thus predict that if the lateral connection patterns are due to visual experience, the patterns in wild-raised tree shrews would be very different from those measured by Bosking et al. (1997), with shorter-range correlations and less emphasis on collinear continuations. This prediction can be tested in future experiments on matching groups of animals reared in different environments.
+W.H. Bosking and Y. Zhang and B. Schofield and D. Fitzpatrick (1997) Orientation selectivity and the arrangement of horizontal connections in tree shrew striate cortex Journal of Neuroscience 17:2112-27.
+E.M. Callaway and L.C. Katz (1990) Emergence and refinement of clustered horizontal connections in cat striate cortex. Journal of Neuroscience 10:1134--53.
+Y. Choe and R. Miikkulainen (2004) Contour integration and segmentation with self-organized lateral connections Biological Cybernetics 90:75-88.
+D.J. Field, A. Hayes, and R.F. Hess (1993) Contour integration by the human visual system: Evidence for a local "association field", Vision Research 33:173--93.
+W.S. Geisler, J.S. Perry, B.J. Super, and D.P. Gallogly (2001) Edge co-occurrence in natural images predicts contour grouping performance. Vision Research 41:711--24.}%
+\newcommand{\Acknowledgments}{%
+This work was supported from the European Community's Seventh Framework Program FP7/2007-2013 under grant agreement number 214728-2, "CODDE".
+}%
+\newcommand{\Conference}{iTWIST '12, Marseille, France.}%ANC seminar series, Edinburgh}%
+\newcommand{\Date}{Thursday, May 10th, 2012}%Tuesday, January 24th, 2012}%
+%%%%%%%%%%% faizi laTETE %%%%%%%%%%%%%%%
+%\usepackage{times,colordvi,amsmath,epsfig,float,
+\usepackage{color}%
+\usepackage{units}%
+%\usepackage{microtype}%
+\usepackage{tikz}%
+% ========  polices de caracteres =============
+% of LuaTeX files.
+\usepackage{fontspec}%Ligatures=TeX,
+\defaultfontfeatures{Mapping=tex-text} 
+%\setsansfont[Ligatures={Common}]{Futura}
+%\setmonofont[Scale=0.8]{Monaco} 
+\setmainfont[Numbers={Proportional,OldStyle}]{TeX Gyre Schola}%TeX Gyre Adventor}%Inconsolata}%Verdana}%TeX Gyre Bonum}
+\setsansfont[Numbers={Proportional,OldStyle},Scale=MatchLowercase]{TeX Gyre Adventor}%Inconsolata}%Latin Modern Sans}
+\setmonofont[Scale=MatchLowercase]{Inconsolata}
+%\usepackage{lmodern,pxfonts}%
+%\usepackage{times}%
+% TODO : \usepackage[scaled=0.94]{futura}
+%\usepackage[T1]{fontenc}%
+%\usepackage[latin1]{inputenc}
+%============ graphics ===================
+%\usepackage[pdftex]{graphicx}%
+\graphicspath{{../figures/}}%
+%\usepackage[pdftex, pdfusetitle ,colorlinks=false,pdfborder={0 0 0}]{hyperref}%
+%============ BIBLIO ===================
+%\usepackage[square]{natbib}%numbers,
+\newenvironment{changemargin}{%
+\begin{list}{}{%
+\setlength{\topsep}{-2pt}%
+\setlength{\leftmargin}{-1cm}%
+\setlength{\rightmargin}{-1cm}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{%
+pdftitle={\Title},%
+pdfauthor={\Author < \AuthorEmail > \Address - \Website},%
+pdfkeywords={\Keywords},%
+pdfsubject={\Date\  ---  \Conference --- \Acknowledgments}%
+}%
+\title{\Title}%
+\author{\Author $^{1,2}$, \AuthorB $^{3}$ and \AuthorC $^{4}$}%
+\subtitle{\SubTitle}%
+\institute{$1$ - \Address \\ $2$ - \AddressBis \\ $3$ - \AddressB \\ $4$ - \AddressC}%
+\date{\Date\   \\ %\Website \\ 
+\vspace*{.02\textheight} \small{\Conference} \\ \vspace*{.02\textheight} \scriptsize{\emph{\Acknowledgments}}}%
+\mode<article>{\usepackage{fullpage}}
+\mode<handout>
+{ 
+\setbeamertemplate{note page}[compress]
+%\usetheme{default} 
+%\setbeamercolor{background canvas}{bg=black!5}
+\setbeamerfont{normal}{size=\small}
+\setbeamerfont{note page}{size=\footnotesize} % \tiny , \scriptsize , \footnotesize , \small , \normalsize 
+%\setbeameroption{show notes}
+\setbeameroption{show only notes}
+%\setbeamercolor{normal text}{fg=black, bg=white} 
+}
+\mode<presentation>
+{ 
+\usetheme{default}  
+%  \usecolortheme{lily}
+%  \usecolortheme{seahorse}
+%  \useinnertheme{rectangles}
+%  \setbeamercovered{invisible}
+%\usetheme{lankton-keynote}
+%\useoutertheme{default}
+%\definecolor{middlecolour}{rgb}{0.32,0.3,0.38}
+%\definecolor{bottomcolour}{rgb}{0.08,0.08,0.16}
+%\setbeamerfont{title}{size=\Huge}
+%\setbeamercolor{structure}{fg= white}
+%\setbeamertemplate{frametitle}[default]%[center]
+%\setbeamercolor{normal text}{bg=black, fg=lightgray}
+%\setbeamertemplate{background canvas}[vertical shading]
+%[bottom=bottomcolour, middle=middlecolour, top=black]
+%\setbeamertemplate{navigation symbols}{} %no nav symbols
+\beamertemplatenavigationsymbolsempty
+}% 
+%
+%\includeonlyframes{mire,title}%
+%\includeonlyframes{intro1a,intro1b,intro1c,intro1d,intro2a,intro2b,intro2c}
+%\includeonlyframes{proba1,proba2,proba3}
+%\includeonlyframes{motion1,motion2,motion3}
+%\includeonlyframes{info}
+%\includeonlyframes{outro}
+%\includeonlyframes{intro1c, chopstick,project1,project2,project3}
+%\includeonlyframes{title,method2,method3,summary1,summary2,results3,biblio}%summary3}
+%%%% summary notes
+%%%\includeonlyframes{title,method2,method3,summary1,summary2,results3,biblio}%summary3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}% 
+\frame[label=title]{%
+\titlepage%
+\note{%
+	\begin{itemize}
+		 \item[(hello)] Hi, I am \Author\  and I work at the team "inference in Vision \& Behavior" supervised by Guillaume Masson in Marseille.  I am currently on visit in Karl Friston's team in London at the UCL. My interests are in computational neuroscience, in discovering the code used to  efficiently represent images in the early visual system and the application to novel computational paradigms (sparsity, probabilities, prediction, hierarchical models). We now "compile" such models as neural networks and as parallel wafer systems in the BrainscaleS project. % 
+		 \item[(today)] Today, I will talk about the potential role of environment of animals as measured by edge statistics in understanding lateral connectivity in the primary visual cortex. Using these results, I will give some predictions on neurophysiological observations. This is joint work with James Bednar who is an expert in topographical models of cortical areas and David Fitzpatrick from MPI in FL% who is a leading neuroscientist, in particular in deciphering the pattern of lateral connectivity ... %This will illustrate an application of sparse coding technique to a neuroscience problem. 
+		 \item[akno] Thanks to the BrainScaleS project for  funding this project.%
+	\end{itemize}%
+	
+	Note: in these notes, some slides are missing
+	}%
+}%
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction: linking neural structure to natural scenes}% to Gestalt... to neurons}%
+%\subsection{Second-order statistics}%
+\subsection{Geisler et al, 2001}%
+\frame[label=intro1]{%
+%\frametitle{\insertsubsection}%
+\begin{changemargin}%
+\begin{center}
+	\includegraphics<1|handout:1>[width=\linewidth]{p4100011.jpg}%../database/Yelmo/p4100011.png}%
+	\includegraphics<2|handout:2>[width=.85\linewidth]{Geisler01Fig7.pdf}%
+\end{center}
+\end{changemargin}%
+\vfill%
+\only<2|handout:2>{[Geisler et al., 2001, Vision Research]}%
+\note<2|handout:1>{%%
+	 \begin{itemize}%
+		 \item[(natural)] Oriented edges that constitute images of natural scenes tend to be aligned in collinear or co-circular arrangements, such as when you follow the contours of these boulders: lines and smooth curves are more common than other possible arrangements of edges. See for example the work of Mariano Sigman on co-circularity in natural images (see Sigman, 2001). %
+		 \item[(neural)] The visual system appears to take advantage of this prior information, and human contour detection and grouping performance is well predicted by what is coined an "association field" (Field et al., 1993)... %
+	\end{itemize}
+	}%
+\note<2|handout:2>{%%
+	 \begin{itemize}%
+		\item[(Gestalt)]  ... this has been measured and quantified by Geisler in 2001 and using a measure of second-order statistics combined with an iterative grouping rule, they  could reproduce diverse behavioral results at a global level, for instance here the link that is reported from a display of artificial edges (A) to what is reported as perceived (B). This thus gives a link between this local dependence present in natural images and the emergence in neural computations of some global Gestalt-like rules as implemented in the brain.
+	\end{itemize}
+	}%
+}%
+
+
+\subsection{Bosking et al, 1997}%
+\frame[label=intro2]{%
+\begin{center}
+%	\includegraphics<1|handout:0>[width=\linewidth]{Bosking97Fig1.pdf}%
+	\includegraphics<1|handout:1>[width=\linewidth]{Bosking97Fig4.jpg}%png}%
+\end{center}
+\vfill%
+[Bosking et al, 1997, Journal of Neuroscience]%
+\note{%
+One possible candidate substrate for implementing such an association field in mammals is the set of long-range lateral connections between neurons in the primary visual cortex (V1), which could act to facilitate detection of contours matching the association field, and/or inhibit detection of other contours. To fill this role, the lateral connections would need to be orientation specific and aligned along contours, 
+	 \begin{itemize}
+		 \item[(colin)] and indeed such an arrangement has been found in tree shrew's primary visual cortex %.
+%		 \item[(neural)] if one looks at  the primary visual area in the occipital lobe of the cortex using optical imaging as here in the treeshew by Bosking and colleagues under the supervision of DF, one could represent the distributed, topographical representation of orientation selectivity. in (A) and (B) the orientation giving the most response at each cortical position is represented by hue using the code below from orange for horizontal to blue for verticals, % and typical structures are magnified in (C): stripes (on the periphery) and pinwheels. You can understand this as a packing of a 3D feature space on the 2D surface of the cortex.
+
+%		 \item[(method)]  Tree shrew orientation preference maps were obtained using optical imaging. Additionally, 540 nm light was used to map surface blood vessels used for alignment. Biocytin was then injected into a specific site in V1 and the animal was sacrificed 16 hours later. Slices of V1 were imaged to locate the biocytin bouton and the surface blood vessels. The blood vessel information was then used to align the orientation preference maps with the bouton images giving overlaid information on the underlying connectivity from the injection site on the animal. The original experiment used a total of ten cases, however, we were only able to recover the data for four cases. 
+		 \item[(lateral)] we show here one result of (Bosking et al., J Neurosci 17:2112-27, 1997) which overlay over a map or orientation selectivity the network of lateral connectivity originating from  a  group of neurons with similar orientations and position. There is a structure in this connectivity towards locality (more pronounced for site B) + connecting iso orientations even on long ranges (A). This type of structure tends to wire together those neurons that have similar orientations, indicating a prior to colinearities. %
+		 \item[(physio)] is there a match of these structures with the statistics of natural images? 1:  Hunt \& Goodhill have reinterpreted above data and shown that there is more diversity than that - 2) Some authors (Kisvarday, 1997, Chavane and Monier) say it is weak or inexistent...
+	\end{itemize}
+	}%
+}%
+
+\frame[label=intro2b]{%
+\begin{center}
+%	\includegraphics<1|handout:0>[width=.65\linewidth]{figure_series_11.png}%
+	\includegraphics<1|handout:1>[width=\linewidth]{Miikkulainen05.pdf}%fig_architecture.png
+\end{center}
+\vfill%
+%\only<1|handout:0>{[Series et al., 2002]}%
+\only<1|handout:1>{[Choe et~al. 2004; Miikkulainen et al., 2005]}%, Computational Maps in the Visual Cortex]}%
+\note{%%
+	This prior can be introduced in models:
+	 \begin{itemize}
+		 \item[(colin)] . This is a typical assumption that the role of lateral interactions is to enhance the activity of neurons which are collinear : it is the so-called \emph{association field} formalized in Field 93, %as was for instance modeled in the work from P. Series...
+		 \item[(model)]	knowing the structure of this connectivity is important for our understanding of the neural computations operating in the primary visual cortex as is captured by models such as the topographically-based LISSOM from Miikulainen and Bednar (topographica) (Choe and Miikkulainen, 2004) %<but also in inter-special varibilities.>
+	\end{itemize}
+	}%
+}%
+
+
+
+\subsection{Problem statement}%
+\frame[label=intro3]{%
+\begin{changemargin}
+	\includegraphics<1|handout:0>[width=\linewidth]{p4100011.jpg}%../database/Yelmo/p4100011.png}
+	\includegraphics<2|handout:1>[width=\linewidth]{../database/treeshew/00000160.jpg}
+\end{changemargin}
+\note{%%
+Basically, all our knowledge on neuroanatomy come from laboratory-reared animals and...
+	 \begin{itemize}
+		 \item[(link)] However, it is not yet known how these patterns develop as a result of visual experience, and if they adapt to be efficient wrt the statistics of natural scenes.   To investigate this issue, we examined the properties of the visual environment of laboratory animals, to determine whether the observed connection patterns are more similar to the statistics of the rearing environment or of a natural habitat. %there is therefore a dependency between the co-linearity of the input to the primary visual cortex, the connectivity pattern of lateral interactions and our understanding of this machinery underlying early vision. This is quite general and present in the somatosensory and auditory systems.
+		  \item[(natural)] Specifically, we analyzed the co-occurence statistics of edge elements in images of natural scenes, and compared them to corresponding statistics for images taken from within the rearing environment of the animals in the Bosking et al. (1997) study.  %but this connection between natural scene statistics and neurophysiology is based on some  definition of what is a natural image, which could be something like this (imagine the treeshew sitting on a tree and seeing this scene),
+		 \item[(lab)] Here I show a picture taken from inside a typical cage as it would be seen from the animal. It is qualitatively quite different  from natural images and it seems that there are more collinear edges. Our goal here is to quantitatively measure this difference and to give some predictions as to how this may play a role in neurophysiological experiments compared to what would be observed in wild animals% (plasticity?). % However, what is observed in a laboratory environment is quite different. 
+	\end{itemize}
+	}%
+}%
+
+\begin{frame}[label=outline]
+\frametitle{Outline: \Title}
+\tableofcontents
+\note{%
+	\begin{enumerate}
+		 \item first, we will define a framework adapted to the computation of second-order edge statistics, using the detection of edges in natural images and laboratory images
+		 \item then, we will show the results of extraction on both classes of images and show the observed statistics
+		 \item Finally, we will summarize results and present some predictions and perspectives		 
+	\end{enumerate}
+	}%
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Method: detection of edges}%
+%%%%%%%%%%%%%%%%%%%%%%%
+%\AtBeginSection[] % 
+%{
+\begin{frame}%<beamer>
+\frametitle{Outline: \Title}
+\tableofcontents[currentsection]
+\note{%
+	\begin{itemize}
+		 \item So, in the part we will  show the method that we used by showing
+		\begin{enumerate}
+			 \item state-of-the-art for extracting second-order statistics in natural images,
+			 \item detailing the dictionary of edges that we used,
+			 \item the edge extraction algorithm
+			 \item we will also define the databases that we used 
+		\end{enumerate}
+	\end{itemize}
+	}%
+\end{frame}
+%}
+%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Geisler et al, 2001}%
+\frame[label=method1]{%
+\frametitle{\insertsubsection}%
+\begin{center}%
+\begin{changemargin}%
+	\includegraphics<1|handout:1>[width=.5\linewidth]{Geisler01Fig3B.pdf}%
+	\includegraphics<1|handout:1>[width=.5\linewidth]{Geisler01Fig3C.pdf}%
+\end{changemargin}%
+	\includegraphics<2|handout:0>[width=.65\linewidth]{Geisler01Fig3A.pdf}%
+\end{center}%
+\vfill%
+[Geisler et al., 2001, Vision Research]%
+%
+\note{% definition of angles = see Geisler01Fig2.pdf
+	 A successful method to measure the statics of second order was shown by [Geisler et al., 2001, Vision Research] on a set of natural images %
+	 \begin{itemize}
+		 \item[(definition)] in this study, they defined second-order statistics to compare an edge as a function of a central reference edge as a pdf on 3 parameters: the distance $d$ between their centers, the angle $\phi$ between the central edge sand the center of the second and $\theta$ the difference between the orientation of both edges. probability is represented by this colormap and to represent on the 2D of the screen this 3d function, they represent in (B) the most probable difference of orientation at each distance and angle, showing the tendency of having collinear, parallel structures in natural images and (C) the most probable angle for each difference of angle and distance, showing a prior bias in natural image for cocircular edges.% I will detail below the precise meaning of theses plot.
+		 \item[(stats)] we will use the same statistical method in this research, but... 
+		 \item[(neural)] however the underlying statistics was done using an heuristic on the edge extraction (as in Sigman 01) and I show here the edges extracted by Geisler on a sample image as they were used in this study. that's why we decided to keep the same treatment for  the statistics but opted for a different, more principled way to extract edges. % I collaborated with James Bednar to validate the results on natural images and extend on a quantitative comparison with laboratory environment
+	\end{itemize}
+	}%
+}%
+
+\subsection{Log Gabor representation / Sparse coding}%
+\frame[label=method2]{%
+\frametitle{\insertsubsection}%
+\begin{center}
+	\includegraphics[width=.9\linewidth]{loggabor.png}%
+\end{center}
+\vfill%
+[Fischer et al, 2007, International Journal of Computer Vision]%
+\note{%%
+	 in order to do that, we first used a linear transformation using a log-gabor representation
+	 \begin{itemize}
+		 \item[(definition)] this representation is a good and generic model of edges as defined by their shape, orientation and scale. It matches what is well described for the response of simple cells' response in area V1.  we show here on the top left that these filters tile evenly the Fourier space, but also that these correspond to a good model of edges at different orientation, scale and phase compared to other dictionaries like the Daubechies wavelet base Db4 in (e) and the steerable pyramid by Eero Simoncelli,
+		  \item[(Fischer)] obviously, this dictionary is over-complete, but their correlation is easy to compute and allow for a relative translation-rotation-scale invariance. we proved that this was better adapted to the extraction of edges than gabors (Fischer, 07).
+	\end{itemize}
+	}%
+%}%
+%
+%\subsection{Competition-Optimized Matching Pursuit}%
+%\frame[label=method3]{%
+%\frametitle{\insertsubsection}%
+%\begin{center}
+%	\includegraphics[width=\linewidth]{COMP.png}\\%
+% $\mathcal{C}(\mathbf{s} |\mathbf{x}, \mathbf{A} ) =   \frac{1}{2.\sigma^2}.\|  \mathbf{x} - \sum_j s_j . \mathbf{A}_j \|^2 + \lambda .  \| \mathbf{s} \|_0 $ %\uncover<1>{(Perrinet, 2010, Neural Comp.)}%
+%\end{center}
+%\vfill%
+
+[Perrinet, 2010, Neural Computation]%
+\note{%%
+	 \begin{itemize}
+		 \item[(MP)]  from this linear representation, we searched for the most sparse representation using a $\ell_0$ norm approach for which Matching Pursuit proved to be  a good approximation. I refer to this paper that appeared last year in Neural Computation for more details which we proved to be mappable to some neural mechanisms (Perrinet, 2003 IEEE), including a model of complex cells' response (Fischer, 2007). It is generic and efficient. 
+%		 \item[(COMP)]  most importantly, we have proven that is well adapted to natural images when we optimized the gain of each filter so that the atom that is chosen at every matching step is \emph{a priori} equiprobable. in practice, this tunes the gain of different frequency bands and orientations. % XXX we also want to make this algorithm better using the prior information
+	\end{itemize}
+	}%
+}%
+
+\section{Results: natural vs. laboratory images}%
+\begin{frame}%<beamer>
+\frametitle{Outline: \Title}
+\tableofcontents[currentsection]
+\note{%
+	let's now see the results of using such a method by 
+	 \begin{itemize}
+		 \item showing some examples of edge extraction
+		 \item  computing second-order statistics
+		 \item and trying to draw a quantitative measure of the difference between natural and laboratory images
+		 \item database collection
+	\end{itemize}
+	}%
+\end{frame}
+
+
+%\subsection{Tracking behaviour}%
+%\setbeamertemplate{background}
+%{
+%\begin{tikzpicture}%
+%\draw [->,white,thick] (.9\textwidth,.9\textheight) -- (.95\textwidth,.95\textheight);
+%\draw [->,white,thick] (0,.1\textheight) -- (0,.8\textheight) node[above, midway,sloped] {internal noise};
+%\draw [->,red,thick] (.1\textwidth,0) -- (\textwidth,0) node [below,midway] {external noise};
+%\end{tikzpicture}
+%}
+%
+
+\subsection{Some examples of edge extraction}%
+\frame[label=results1]{%
+\frametitle{\insertsubsection}%
+\begin{center}
+\begin{changemargin}%
+\begin{tabular}{cc}%
+	\includegraphics[width=.468\linewidth]{edgestats_vanilla_natural_frame570.png}&
+	\includegraphics[width=.468\linewidth]{classifier_treeshew_00000230.png}\\%
+	%	\includegraphics<1>[width=.5\linewidth]{Yelmo_0.png}&%
+%	\includegraphics<1>[width=.5\linewidth]{treeshew_0.png}%
+%	\only<1|handout:1>{
+%		\includegraphics[width=.5\linewidth]{edgestats_vanilla_natural_frame570.png}&%
+%		\includegraphics[width=.5\linewidth]{classifier_treeshew_00000230.png}\\}%
+%	\only<2|handout:0>{
+%		\includegraphics[width=.5\linewidth]{Yelmo_1.png}&%
+%		\includegraphics[width=.5\linewidth]{treeshew_1.png}\\}%
+%	\only<3|handout:0>{
+%		\includegraphics[width=.5\linewidth]{Yelmo_2.png}&%
+%		\includegraphics[width=.5\linewidth]{treeshew_2.png}\\}%
+%	\only<4|handout:0>{
+%		\includegraphics[width=.5\linewidth]{Yelmo_3.png}&%
+%		\includegraphics[width=.5\linewidth]{treeshew_3.png}\\}%
+	Natural &%
+	Laboratory %
+\end{tabular}%
+\end{changemargin}%
+\end{center}
+\note{%%
+	\begin{itemize}
+		 \item[(edges)] 	We show here the results of the edge extraction on a set of patches extracted from both database. Parameters for each edge are the scalar amplitude, position, phase, orientation and scale.  The hue gives the orientation, the length represents the size (scale) of the edge. This shows that edges are qualitatively well extracted. 
+		\item[(efficient)] this method is rather general and proves to be efficiently grabbing most edges. in particular we can reconstruct the image from them and we achieved a performance measured by the RMSE of $\approx 20\% $
+		\item[(qual)]  Both images classes appear qualitatively different and we tried to characterize how they differ. First-order statistics (distribution of positions, orientations, scale) showed a typical pattern but no differences between theses 2 classes... However, when computing...
+	\end{itemize}
+	}%
+}%
+%\subsection{First-order statistics}%
+%\frame[label=results2]{%
+%\frametitle{\insertsubsection}%
+%\includegraphics<1>[width=.5\linewidth]{../figures/edgestats_big_proba-theta_Yelmo.pdf}
+%\includegraphics<1>[width=.5\linewidth]{../figures/edgestats_big_proba-theta_treeshew.pdf}
+%\begin{center}
+%\end{center}
+%\note{%%
+%	We show here
+%	}%
+%}%
+
+\subsection{Second-order statistics}%
+\frame[label=results2]{%
+\frametitle{\insertsubsection}%
+\begin{center}%
+\begin{changemargin}%
+\only<1|handout:0>{%
+$$	\arg\max_\theta p( \theta | d, \phi, \sigma, \pi_0)  $$ \\
+}%
+\only<2|handout:0>{
+$$	\arg\max_\phi p( \phi |  d, \theta, \sigma, \pi_0)  $$ \\
+}%
+\only<3|handout:1>{
+$$	 p( d, \phi, \theta, \sigma | \pi_0) \approx  p( d, \sigma  | \pi_0) p( \theta,\phi | \pi_0)  $$ \\
+}%
+\begin{tabular}{cc}%
+\only<1|handout:0>{%
+	\includegraphics[width=.468\linewidth]{../figures/edgestats_vanilla_proba-edgefield_colin_natural.pdf}&%classifier_proba-edgefield_colin_Yelmo.pdf}&%
+	\includegraphics[width=.468\linewidth]{../figures/edgestats_vanilla_proba-edgefield_colin_laboratory.pdf}\\%classifier_proba-edgefield_colin_treeshew.pdf}\\%
+}%
+\only<2|handout:1>{
+	\includegraphics[width=.468\linewidth]{../figures/edgestats_vanilla_proba-edgefield_cocir_natural.pdf}&%classifier_proba-edgefield_cocir_holle_distractors.pdf}&
+	\includegraphics[width=.468\linewidth]{../figures/edgestats_vanilla_proba-edgefield_cocir_laboratory.pdf}\\%classifier_proba-edgefield_cocir_treeshew.pdf}\\% 
+}%
+\only<3|handout:2>{%
+	\includegraphics[width=.468\linewidth]{../figures/edgestats_vanilla_chevrons_natural.pdf}&% classifier_chevrons_Yelmo.pdf}&%classifier_chevrons_holle_targets.pdf
+	\includegraphics[width=.468\linewidth]{../figures/edgestats_vanilla_chevrons_laboratory.pdf}\\% classifier_chevrons_treeshew.pdf}\\%
+}%
+Natural &%
+Laboratory %
+\end{tabular}%
+\end{changemargin}%
+\end{center}%
+\note<handout:1>{%
+	... second-order stats, we will see a clear difference. The histogram was computed as a a 4-dimensional function of distance, azimuth $\phi$, difference of orientation $\theta$ and ratio of scale.
+	\begin{itemize}
+		 \item[(colin)]  let's first replicate the result from Geisler by showing that relative to a given edge (segment in the center), what is the Here I show for each distance and angle the most probable difference of angle, showing that collinear and parallel edges predominate. 
+		\item[(lab)] when using the images from the laboratory environment, one finds a different pattern where the colinearity clearly dominates: this quantitatively shows the difference between the edges's second-order statistics... % Obviously, this should have a consequence on 
+		 \item[(cocir)] a similar pattern is observed the cocircular plot. it reproduces the results from Geisler on natural images, but laboratory environment shows a strong bias to colinearity. 	
+	\end{itemize}
+	}%
+\note<handout:2>{%
+	\begin{itemize}
+	Probability distribution function of "chevrons" in natural and laboratory images
+		 \item[(angles)]  By computing measures of the independence of the different variables, we found that the probability density function of the second-order statistics of edges factorizes with on one side distance and scale and on the other side the 2 angles. The first component proved to be quite similar across both classes and the greater difference is seen for different angle configuration. As it can be reduced to 2 dimensions, we can plot the full probability as shown here by different contrast values assigned to all possible chevrons configurations, for all possible "azimuth" values $\phi$ on the horizontal axis and difference of orientation $\theta$ on the vertical axis. Such a plot most strikingly shows the difference between these 2 classes.
+	\end{itemize}
+	one issue now that we can show the 2nd order statistics is to know if it would be possible to quantify such difference...
+	}%
+}%
+%% HACK to make a 4 pages summary
+%\frame[label=summary1]{ %
+%\frametitle{Extracting edges in different image classes}%
+%\begin{tabular}{cc}%
+%	\includegraphics<1>[width=.5\linewidth]{Yelmo_0.png}&%
+%	\includegraphics<1>[width=.5\linewidth]{treeshew_0.png}\\%
+%	Natural &%
+%	Laboratory %
+%\end{tabular}%
+%\note{%%
+%	\begin{itemize}
+%		 \item[(edges)] 	We show here the results of the edge extraction on a set of patches extracted from both database. The hue gives the orientation, the length represents the scale.
+%		\item[(stats)] 	This shows that edges are qualitatively well extracted. This was confirmed by the reconstruction of the images from the edges (not shown)
+%		\item[(qual)]  Both images classes appear qualitatively different... 
+%	\end{itemize}
+%	}%
+%}%
+%
+%\frame[label=summary2]{ %
+%\frametitle{Second-order statistics}%
+%\begin{tabular}{cc}%
+%	\includegraphics[width=.5\linewidth]{../figures/edgestats_big_proba-edgefield_colin_Yelmo.pdf}&%
+%	\includegraphics[width=.5\linewidth]{../figures/edgestats_big_proba-edgefield_colin_treeshew.pdf}\\%
+%	Natural &%
+%	Laboratory %
+%\end{tabular}%
+%\note{%%
+%	\begin{itemize}
+%		 \item[(colin)] 	When we compute the second-order statistics from these edges, one reproduces the results from Geisler. Here I show for each distance and angle the most probable difference of angle, showing that collinear and parallel edges predominate. 
+%		\item[(lab)] when using the images from the laboratory environment, one finds a different pattern where the colinearity clearly dominates: this quantitatively shows the difference between the edges's second-order statistics. Obviously, this should have a consequence on 
+%	\end{itemize}
+%	}%
+%}%
+%
+%\frame[label=summary3]{ %
+%\frametitle{Neural implementation?}%
+%\begin{center}%
+%	\includegraphics[width=.5\linewidth]{COMP.png}%
+%\end{center}%
+%}%
+
+\subsection{Quantitative difference using classification}%
+\frame[label=results3]{%
+\frametitle{\insertsubsection}%
+\begin{center}
+\includegraphics[width=.7\linewidth]{../figures/classifier_KL_natural_holle_distractors.pdf}% classifier_KL_holle_distractors_holle_targets.pdf}%edgestats_vanilla_KL_natural_laboratory.pdf}
+\end{center}
+\note{%%
+%TODO : use SVN see p.33 of Dorr10phd
+	\begin{itemize}
+		 \item[(KL-2-means)] ... we did that by using a simple classifier (a 2-means classifier using the KL distance between the histogram of one image  to the average histogram to each class), so that one gets a simple, translation, orientation and scale invariant classifier which can efficiently differentiate between one natural image and a lab image. it comes as a big surprise as this is only based on some local characteristic, but it sufficient to get good classification. this gives also a quantitative method (measuring the area under the ROC curve) to rate different methods and databases. The result as computed by the Area Under the Curve is of 99.3\% accuracy.
+		 \item[(animals)] as this ROC curve would be kind of boring to show (a right angle "perfect" wedge), we show one more surprising result: applying the same type of procedure to images of animals versus non-animals as used by the team of Simon Thorpe in Toulouse, one can get a pretty good classification of approximately 70\% accuracy. this comes as a surprise as we are only using a one-layer, feed-forward computation... still there is much to explore.
+	\end{itemize}
+	}%
+}%
+% -----------------------------------------------------------------------------------------------------------------------------------------------------
+\section{Take-home message}%
+\frame[label=summary]{ %
+\frametitle{Summary}%
+\begin{changemargin}%
+\begin{center}
+\only<1|handout:0>{%
+\begin{tabular}{cc}%
+	\includegraphics[width=.468\linewidth]{edgestats_vanilla_natural_frame570.png}&%
+	\includegraphics[width=.468\linewidth]{classifier_treeshew_00000230.png}\\%
+}%
+\only<2|handout:1>{%
+$$	 p( d, \phi, \theta, \sigma | \pi_0) \approx  p( d, \sigma  | \pi_0) p( \theta,\phi | \pi_0)  $$ \\
+\begin{tabular}{cc}%
+	\includegraphics[width=.468\linewidth]{../figures/edgestats_vanilla_chevrons_natural.pdf}&% ../figures/classifier_chevrons_Yelmo.pdf}&%classifier_chevrons_holle_targets.pdf
+	\includegraphics[width=.468\linewidth]{../figures/edgestats_vanilla_chevrons_laboratory.pdf}\\% ../figures/classifier_chevrons_treeshew.pdf}\\%
+}%
+\only<3|handout:0>{%
+$$	 p( d, \phi, \theta, \sigma | \pi_0) \approx  p( d, \sigma  | \pi_0) p( \theta,\phi | \pi_0)  $$ \\
+\begin{tabular}{cc}%
+	\includegraphics[width=.468\linewidth]{../figures/classifier_chevrons_natural.pdf}&%holle_distractors.pdf}&% 
+	\includegraphics[width=.468\linewidth]{../figures/classifier_chevrons_holle_distractors.pdf}\\%classifier_chevrons_holle_targets.pdf}\\%classifier_chevrons_laboratory.pdf}\\%
+}%
+Natural &%
+Laboratory %
+\end{tabular}%
+\end{center}
+\end{changemargin}%
+%
+\note{%
+%|  > 
+%|  > I'd be interested in having more general discussion at the end about
+%|  > what these results mean, and what should be done about them.  We have
+%|  > to be careful not to assume that they represent plasticity, as we have
+%|  > only circumstantial evidence of that, but we should mention plasticity
+%|  > as a strong possibility.  I.e., we should say that the results are
+%|  > highly suggestive of plasticity, given that the patterns of lateral
+%|  > connectivity appear to be compatible with Hebbian learning of
+%|  > cooccurence statistics of the animals' laboratory environment, but
+%|  > that tests on wild-reared or differently reared animals (e.g. in cages
+%|  > with wavy-line bars?) would need to be done to test that hypothesis.
+%|  > And I think we should point out explicitly that meanwhile we should be
+%|  > careful about interpreting the Bosking results as being representative
+%|  > of neural implementations of natural scene statistics, as they appear
+%|  > to be far more compatible with laboratory environment statistics.
+To summarize, during this talk  I hope I convinced you that 
+	\begin{itemize}
+		\item second-order statistics are efficiently computed by using a the algorithm from Geisler et al. (2001), with a more general edge extraction algorithm that uses sparse coding %to avoid multiple responses to a single edge. %using Matching Pursuit may be efficiently used to extract edges on natural images using an optimization of the matching step,
+		\item Collinearity and co-circularity results for natural images replicated qualitatively the results from Geisler et al. (2001), confirming that prior information about continuations appeared consistently in natural images. However, we find that the largely man-made environment in which these animals were reared has a significantly higher probability of collinear edge elements. % the second-order statistics of edges are very different in different environments and this may have consequences on the pattern of lateral interactions that is learned by the primary visual cortex due to plasticity and therefore on the results of Bosking and therefore on our understanding through models
+		\item We thus predict that if the lateral connection patterns are due to visual experience, the patterns in wild-raised tree shrews would be very different from those measured by Bosking et al. (1997), with shorter-range correlations and less emphasis on collinear continuations. This prediction can be tested in future experiments on matching groups of animals reared in different environments. $p(d,\sigma)$ should be hard-wired while $p(\theta, \phi)$ should be adaptive. cocircularity is weak but existent + anti-cocircularity is surprising= should be present as a connection structure. %these results may have some repercussions on edge extraction and we could use this prior knowledge to enhance the detection of edges (particles filtering)
+		\item ... one more thing: we need to do more analysis on statistics...
+	\end{itemize}
+	Thank you for your attention.
+	} 
+% -----------------------------------------------------------------------------------------------------------------------------------------------------
+%\note{%
+%To summarize, during this talk  I hope I convinced you that 
+%	\begin{itemize}
+%		\item using Matching Pursuit may be efficiently used to extract edges on natural images using an optimization of the matching step,
+%		\item the second-order statistics of edges are very different in different environments and this may have consequences on the pattern of lateral interactions that is learned by the primary visual cortex due to plasticity and therefore on the results of Bosking and therefore on our understanding through models
+%		\item these results may have some repercussions on edge extraction and we could use this prior knowledge to enhance the detection of edges (particles filtering)
+%	\end{itemize}
+%	Thank you for your attention.
+%	} 
+}%
+
+%
+%\usebackgroundtemplate{%
+%\includegraphics[width=.7\paperwidth]{empty.png}%
+%\includegraphics[width=.3\paperwidth]{qrcode.png}%
+%}%
+%
+%\subsection*{References}%
+\frame[label=biblio]{\frametitle{References}%\insertsubsection}%
+
+%\begin{tikzpicture}[remember picture,overlay]  
+%  \node [xshift=-.2\paperwidth,yshift=.3\paperwidth] at (current page.south east)
+%    { \includegraphics[width=.3\paperwidth]{qrcode.png}  \end{center} };
+%\end{tikzpicture}
+
+{\tiny
+\begin{thebibliography}{5}
+%\providecommand{\url}[1]{\texttt{#1}}
+%\expandafter\ifx\csname urlstyle\endcsname\relax
+%  \providecommand{\doi}[1]{doi: #1}\else
+%  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Geisler et~al.(2001)]{Geisler01}
+W.~Geisler, J.~Perry, B.~Super, D.~Gallogly
+\newblock {E}dge co-occurence in natural images predicts contour grouping performance.
+\newblock \emph{Vision Research}, 41:\penalty0 711--24, 2001.
+
+\bibitem[Field et~al.(1993)]{Field1993}
+D.~Field and A.~Hayes and R.~Hess
+\newblock Contour integration by the human visual system: evidence for a local "association field".
+\newblock \emph{Vision Research}, 33\penalty0 (2):\penalty0 173--93, 1993.
+
+\bibitem[Choe et~al.(2004)]{Choe2004}
+Y. Choe and R. Miikkulainen
+\newblock Contour integration and segmentation with self-organized lateral connections.
+\newblock \emph{Biological Cybernetics}, 90\penalty0 (2):\penalty0 75--88, 2004.
+
+\bibitem[Bosking et~al.(1997)]{Bosking97}
+W.~Bosking, Y.~Zhang, B.~Schofield, and D.~Fitzpatrick
+\newblock  Orientation selectivity and the arrangement of horizontal connections in tree shrew striate cortex
+\newblock \emph{The Journal of Neuroscience}, 17\penalty0 (6):\penalty0 2112-27, March 15, 1997.
+%
+\bibitem[Callaway, E. M. and Katz, L. C.]{Callaway90}
+E.~Callaway and L.~Katz
+\newblock Emergence and refinement of clustered horizontal connections in cat striate cortex.
+\newblock \emph{The Journal of Neuroscience}, 10\penalty0 (4):\penalty0 1134--53, 1990.
+
+\bibitem[Fischer et~al.(2007)Fischer, \v{S}roubek, Perrinet, Redondo, and  Crist{\'{o}}bal]{Fischer07a}
+S.~Fischer, F.~\v{S}roubek, L.~U. Perrinet, R.~Redondo, and G.~Crist{\'{o}}bal.
+\newblock {Self-Invertible 2D Log-Gabor Wavelets}.
+\newblock \emph{International Journal of Computer Vision}, 75\penalty0 (2):\penalty0 231--246, 2007.
+%\newblock \doi{http://dx.doi.org/10.1007/s11263-006-0026-8}.
+%\newblock URL  \url{http://dx.doi.org/http://dx.doi.org/10.1007/s11263-006-0026-8}.
+%\newblock URL  \url{\Website/Publications/Fischer07}.
+
+\bibitem[Perrinet(2010)]{Perrinet10shl}
+L.~U. Perrinet.
+\newblock {Role of homeostasis in learning sparse representations}.
+\newblock \emph{Neural Computation}, 22\penalty0 (7):\penalty0 1812--36, July 2010.
+%\newblock \doi{10.1162/neco.2010.05-08-795}.
+%\newblock URL  \url{\Website/Publications/Perrinet10shl}.
+
+\bibitem[Perrinet(2011)]{Perrinet11sfn}
+L.~U. Perrinet,  D.~Fitzpatrick, and J.~Bednar
+\newblock {\Title}.
+\newblock \emph{\Conference}, 2011.
+\newblock URL  \url{\Website/Presentations/12-01-24_Edinburgh}%Publications/Perrinet11sfn}.
+
+\bibitem[Seri{\`e}s et~al.(2002)Seri{\`e}s, Georges, Lorenceau, and  Fr{\'e}gnac]{Series02}
+P.~Seri{\`e}s, S.~Georges, J.~Lorenceau, and Y.~Fr{\'e}gnac.
+\newblock {O}rientation dependent modulation of apparent speed: a model based on the dynamics of feed-forward and horizontal connectivity in {V}1 cortex.
+\newblock \emph{Vision {R}esearch}, 42\penalty0 (25):\penalty0 2781--97, Nov 2002.
+
+
+\end{thebibliography}}
+}
+%------------------------------------------------------------------%
+\appendix
+\section{\appendixname}
+%
+\frame[label=peggy]{%
+\frametitle{Neuromorphic implementation}%
+\begin{columns}%
+\begin{column}{.5\textwidth}%
+	\begin{center}%
+		\includegraphics[width=.95\columnwidth]{figure_series.png}%\\%
+	\end{center}%
+\end{column}%
+\begin{column}{.5\textwidth}%
+	\begin{center}%
+		\includegraphics[width=.6\columnwidth]{figure_series_11.png}%
+	\end{center}%
+	[Series et al., 2002]
+\end{column}%
+\end{columns}%
+}%
+%
+\frame[label=mp]{ %
+\frametitle{Matching Pursuit}%
+\begin{changemargin}%
+\begin{center}
+\begin{tabular}{cc}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_0.png}&%
+	\includegraphics[width=.468\linewidth]{MP_0_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_1.png}&%
+	\includegraphics[width=.468\linewidth]{MP_1_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_2.png}&%
+	\includegraphics[width=.468\linewidth]{MP_2_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_4.png}&%
+	\includegraphics[width=.468\linewidth]{MP_4_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_8.png}&%
+	\includegraphics[width=.468\linewidth]{MP_8_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_16.png}&%
+	\includegraphics[width=.468\linewidth]{MP_16_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_32.png}&%
+	\includegraphics[width=.468\linewidth]{MP_32_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_64.png}&%
+	\includegraphics[width=.468\linewidth]{MP_64_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_128.png}&%
+	\includegraphics[width=.468\linewidth]{MP_128_reconstruct.png}\\%
+}%
+\only<+|handout:0>{%
+	\includegraphics[width=.468\linewidth]{MP_256.png}&%
+	\includegraphics[width=.468\linewidth]{MP_256_reconstruct.png}\\%
+}%
+Residual &%
+Edges %
+\end{tabular}%
+\end{center}
+\end{changemargin}%
+%
+%\note{%
+%This is how Matching Pursuit works:
+%	\begin{itemize}
+%		\item on the left, ...	
+%		\item at the first step...
+%	\end{itemize}
+%	} 
+}%
+
+%-------------------------------------------------------------------------------------------%
+\end{document}%
