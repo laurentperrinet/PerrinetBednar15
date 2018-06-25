@@ -18,6 +18,8 @@ update:
 	pip install -U git+https://github.com/bicv/LogGabor.git
 	pip install -U git+https://github.com/bicv/SparseEdges.git
 
+get_backup:
+	 scp -r laurentperrinet@10.164.5.254:/data/2017_backup/archives/2017_science/PerrinetBednar15/test .
 
 ENIGMA = lup@truc.hd.free.fr:/Users/lup/science/PerrinetBednar15
 RIOU = /hpc/invibe/perrinet.l/science/PerrinetBednar15
