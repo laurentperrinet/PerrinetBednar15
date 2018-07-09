@@ -20,7 +20,8 @@ update:
 
 get_backup:
 	 scp -r laurentperrinet@10.164.5.254:/data/2017_backup/archives/2017_science/PerrinetBednar15/test .
-
+	 scp -r laurentperrinet@10.164.5.254:/data/2017_backup/backups/2017-12-01_nextcloud_piretina_backup/2017-02-01_data/lolo/files/2016_science/2016-12-XX_PerrinetBednar15/test/cache_dir/edges test/cache_dir/
+	 
 ENIGMA = lup@truc.hd.free.fr:/Users/lup/science/PerrinetBednar15
 RIOU = /hpc/invibe/perrinet.l/science/PerrinetBednar15
 FRIOUL = perrinet.l@frioul.int.univ-amu.fr
@@ -50,15 +51,15 @@ cluster_run_parallel:
 	#frioul_batch  -c 16 -M 4 'python experiment_animals.py'
 
 transfer_to_ENIGMA:
-	rsync $(OPTIONS) -bwlimit=300 data_cache results *pdf  $(ENIGMA)/
+	rsync $(OPTIONS) -bwlimit=300 cache_dir results *pdf  $(ENIGMA)/
 
 transfer_from_ENIGMA:
 	rsync $(OPTIONS) -bwlimit=300  $(ENIGMA)/database .
 
 transfer_to_riou:
-	rsync $(OPTIONS) test/{*.log,results,data_cache} $(FRIOUL):$(RIOU)/
+	rsync $(OPTIONS) test/{*.log,results,cache_dir} $(FRIOUL):$(RIOU)/
 transfer_from_riou:
-	rsync $(OPTIONS) $(FRIOUL):$(RIOU)/{*.log,results,data_cache} test
+	rsync $(OPTIONS) $(FRIOUL):$(RIOU)/{*.log,results,cache_dir} test
 
 web:
 	zip web.zip $(Test_src)
@@ -86,7 +87,7 @@ clean_tmp:
 	rm log-edge-debug.log
 
 clean_SVM:
-	rm frioul.* results/*png results/*SVM*txt data_cache/*hist* data_cache/*SVM* data_cache/*lock results/*lock
+	rm frioul.* results/*png results/*SVM*txt cache_dir/*hist* cache_dir/*SVM* cache_dir/*lock results/*lock
 clean:
 	rm -f results/* white*.npy $(latexfile).pdf *.pyc *.py~ *.npy
 
