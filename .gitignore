@@ -1,3 +1,5 @@
+database/laboratory
+database/treeshrew
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
@@ -315,5 +317,3 @@ talk/perrinet15sis.out
 talk/perrinet15sis.pdf
 talk/perrinet15sis.snm
 talk/perrinet15sis.toc
-
-
